@@ -20,11 +20,13 @@ function searchZone() {
 					dropdownList.appendChild(li);
 
 					li.addEventListener('click', function() {
+						
+						map.data.revertStyle();
 
 						const searchBox = document.getElementById('zone-search');
 						searchBox.value = this.textContent.trim();
-            const zoneIdentif = document.getElementById('zone-id');
-            zoneIdentif.value = zones[i][0];
+            					const zoneIdentif = document.getElementById('zone-id');
+            					zoneIdentif.value = zones[i][0];
 
 						const zoneId = zones[i][0]; // get the zone ID from the array
 
@@ -34,7 +36,7 @@ function searchZone() {
 
 						map.data.setStyle(function(feature) {
 							var objectid = feature.getProperty('objectid');
-							//var color = "green";
+							var color = "green";
 							if (objectid == zoneId) {
 								color = "red";
 							}
