@@ -20,14 +20,15 @@ function searchZone() {
 					dropdownList.appendChild(li);
 
 					li.addEventListener('click', function() {
-                        		const zoneIDBox = document.getElementById('zoneID');
-                        		zoneIDBox.value = zones[i][0]
-
-                        			//map.data.revertStyle();
+                        			
+                        			map.data.revertStyle();
+						
 						const searchBox = document.getElementById('zone-search');
 						searchBox.value = this.textContent.trim();
 
 						const zoneId = zones[i][0]; // get the zone ID from the array
+						const zoneIDBox = document.getElementById('zoneID');
+                        			zoneIDBox.value = zoneID
 
 						// NOTE: This uses cross-domain XHR, and may not work on older browsers.
 						map.data.loadGeoJson('https://raw.githubusercontent.com/billiegiansante/kmlFiles/master/map.geojson');
