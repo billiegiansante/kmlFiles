@@ -23,7 +23,7 @@ function searchZone() {
                         		const zoneIDBox = document.getElementById('zoneID');
                         		zoneIDBox.value = zones[i][0]
 
-                        			map.data.revertStyle();
+                        			//map.data.revertStyle();
 						const searchBox = document.getElementById('zone-search');
 						searchBox.value = this.textContent.trim();
 
@@ -33,7 +33,7 @@ function searchZone() {
 						map.data.loadGeoJson('https://raw.githubusercontent.com/billiegiansante/kmlFiles/master/map.geojson');
 
 
-						map.data.setStyle(function(feature) {
+						map.data.overrideStyle(function(feature) {
 							var objectid = feature.getProperty('objectid');
 							var color = "green";
 							if (objectid == zoneId) {
