@@ -20,10 +20,10 @@ function searchZone() {
 					dropdownList.appendChild(li);
 
 					li.addEventListener('click', function() {
-                        		//const zoneIDBox = document.getElementById('zoneID');
-                        		//zoneIDBox.value = zones[i][0]
+                        		const zoneIDBox = document.getElementById('zoneID');
+                        		zoneIDBox.value = zones[i][0]
 
-                        			//map.data.revertStyle();
+                        			map.data.revertStyle();
 						const searchBox = document.getElementById('zone-search');
 						searchBox.value = this.textContent.trim();
 
