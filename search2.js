@@ -28,7 +28,7 @@ function searchZone() {
 
 						const zoneId = zones[i][0]; // get the zone ID from the array
 						const zoneIDBox = document.getElementById('zoneID');
-                        			zoneIDBox.value = zoneID
+                        			zoneIDBox.value = zoneId
 
 						// NOTE: This uses cross-domain XHR, and may not work on older browsers.
 						map.data.loadGeoJson('https://raw.githubusercontent.com/billiegiansante/kmlFiles/master/map.geojson');
@@ -36,7 +36,7 @@ function searchZone() {
 
 						map.data.overrideStyle(function(feature) {
 							var objectid = feature.getProperty('objectid');
-							var color = "green";
+							var color;
 							if (objectid == zoneId) {
 								color = "red";
 							}
